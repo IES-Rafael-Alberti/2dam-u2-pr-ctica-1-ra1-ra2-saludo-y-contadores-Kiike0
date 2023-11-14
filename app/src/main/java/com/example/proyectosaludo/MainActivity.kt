@@ -28,6 +28,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import com.example.proyectosaludo.ui.theme.ProyectoSaludoTheme
 
 class MainActivity : ComponentActivity() {
@@ -70,7 +71,7 @@ fun Saludar() {
         if (!showDialog) { //Mientras sea showDialog false se muestra el boton saludar
             // Pantalla principal con el botón "Saludar" y el texto asociado
             Button(onClick = { showDialog = true }) {
-                Text("Saludar")
+                Text("Saludar", fontSize = 18.sp)
             }
             //El text se muestra solo si el nombre no está vació, si no no muestra nada
             Text(text = if (name.isNotEmpty()) "Hola, $name" else "")
@@ -80,12 +81,17 @@ fun Saludar() {
                 onDismissRequest = {
                     showDialog = false
                 },
-                title = { Text("Configuración", textAlign = TextAlign.End,  modifier = Modifier.fillMaxWidth()) },
+                title = { Text("Configuración",
+                    textAlign = TextAlign.End,
+                    modifier = Modifier
+                        .fillMaxWidth(),
+                    fontSize = 22.sp
+                ) },
                 text = {
                     Column(
                         modifier = Modifier.padding(15.dp)
                     ) {
-                        Text("Introduce tu nombre")
+                        Text("Introduce tu nombre", fontSize = 18.sp)
                         TextField(value = name, onValueChange = { name = it }) //Cambia el valor de nombre
                         Spacer(modifier = Modifier.height(20.dp)) //Un espacio debajo del Texto a editar
                         Row(
