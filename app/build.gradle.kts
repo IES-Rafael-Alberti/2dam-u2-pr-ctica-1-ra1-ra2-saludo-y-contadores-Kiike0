@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.saludoycontadores_evr"
+    namespace = "com.example.proyectosaludo"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.example.saludoycontadores_evr"
+        applicationId = "com.example.proyectosaludo"
         minSdk = 34
         targetSdk = 34
         versionCode = 1
